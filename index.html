@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cyan;
+        }
+       button{
+        height: 100px;
+        width: 100px;
+        border-radius: 50;
+       } 
+       #result{
+        height: 100px;
+        width: 410px;
+       }
+
+
+    </style>
+</head>
+<body><center>
+    <h1>CALCULATOR</h1>
+    <input  type="text"  style="background-color: pink;" placeholder="0" id="result">
+    <table>
+        <tr style="background-color: blanchedalmond;">
+            <td style="background-color: blueviolet;"><button onclick="display(7)">7</button></td>
+            <td style="background-color: blueviolet;"><button onclick="display(8)">8</button></td>
+            <td><button onclick="display(9)">9</button></td>
+            <td><button onclick="display('+')" style="background-color:palevioletred;">+</button></td>
+        </tr>
+        <tr style="background-color: blanchedalmond;">
+            <td><button onclick="display(4)" style="background-color: chocolate;">4</button></td>
+            <td><button onclick="display(5)" style="background-color: whitesmoke;">5</button></td>
+            <td><button onclick="display(6)" style="background-color: green;">6</button></td>
+            <td><button onclick="display('-')" style="background-color: papayawhip;">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display(1)" style="background-color: chocolate;">1</button></td>
+            <td><button onclick="display(2)" style="background-color: whitesmoke;">2</button></td>
+            <td><button onclick="display(3)" style="background-color: rgba(172, 255, 47, 0.726);">3</button></td>
+            <td><button onclick="display('*')" style="background-color: aqua;">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display(0)" style="background-color:chocolate;">0</button></td>
+            <td><button onclick="clr('c')" style="background-color: whitesmoke;">c</button></td>
+            <td><button onclick="calculate('=')" style="background-color: green;">=</button></td>
+            <td><button onclick="display('/')" style="background-color: aquamarine;">/</button></td>
+        </tr>
+
+    </table>
+    </center>
+</body>
+<script>
+    let output=document.getElementById("result");
+    function display(num){
+        output.value+=num;
+    }
+    function calculate(){
+        try{
+            output.value=eval(output.value);
+        }
+        catch(err){
+             alert("invalid");
+        }
+    }
+    function clr(){
+        output.value="";
+    }
+    output
+</script>
+</html>
